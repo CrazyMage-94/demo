@@ -1,2 +1,30 @@
 server:
   port: 9080
+spring:
+  redis:
+    host: 192.168.55.151 #47.98.154.127
+    port: 6379 #8088
+    password: #123456
+    database: 1
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # 初始化大小，最小，最大
+    initialSize: 20
+    minIdle: 5
+    maxActive: 200
+
+    #连接等待超时时间
+    maxWait: 60000
+
+    #配置隔多久进行一次检测(检测可以关闭的空闲连接)
+    timeBetweenEvictionRunsMillis: 60000
+
+    #配置连接在池中的最小生存时间
+    minEvictableIdleTimeMillis: 300000
+
+    validationQuery: SELECT 1 FROM DUAL
